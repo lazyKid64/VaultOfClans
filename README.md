@@ -3,12 +3,16 @@
 🛡️ **Build your village, train your army, and stake your assets in a gamified decentralized finance strategy simulator.**
 
 [![Solidity Version](https://img.shields.io/badge/Solidity-0.8.20-8B5A2B?style=for-the-badge&logo=solidity&logoColor=white)](https://soliditylang.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![React Version](https://img.shields.io/badge/React-19.x-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![Next.js Framework](https://img.shields.io/badge/Next.js-15.x-black?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
 [![TailwindCSS styling](https://img.shields.io/badge/TailwindCSS-3.x-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![Foundry Toolchain](https://img.shields.io/badge/Foundry-Forge-FF5733?style=for-the-badge&logo=rust&logoColor=white)](https://book.getfoundry.sh/)
+[![Python Version](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![Tests Passing](https://img.shields.io/badge/Tests-57%2F57%20Passed-22C55E?style=for-the-badge&logo=github-actions&logoColor=white)](#-testing-suite)
 [![Skill Level](https://img.shields.io/badge/Skill%20Level-Beginner-brightgreen?style=for-the-badge)](https://github.com/lazyKid64/VaultOfClans)
+
+🔗 **Live Deployment:** [https://vault-of-clans.vercel.app/](https://vault-of-clans.vercel.app/)
 
 ---
 
@@ -22,20 +26,38 @@ Instead of staring at dry charts and basic tables, players interact with a premi
 
 ## 🛠️ Technology Stack & Beginner Level Classification
 
-This repository is designed as a **beginner-friendly dApp template** showcasing how to bind core ERC standards (ERC-20, ERC-721) and custom vault time-locking mechanics to a modern client application.
+This repository is designed as a **beginner-friendly dApp template** showcasing how to bind core on-chain standards (ERC-20, ERC-1155) and custom vault time-locking mechanics to a modern client application.
 
-### Backend (Smart Contracts)
-*   **Solidity (0.8.20):** Primary smart contract language.
-*   **Foundry / Forge:** Compilation toolchain, fast local testing runner, and deployment utility.
-*   **OpenZeppelin Contracts:** Enforces standardized implementations of `ERC20`, `ERC721`, and `Ownable` permissions.
+### ⛓️ Blockchain & Smart Contracts
+*   **Solidity (0.8.20):** High-level object-oriented programming language for writing smart contracts.
+*   **OpenZeppelin Contracts (v5.0.0):** Standard library for secure contract implementations, specifically:
+    *   `ERC20` (Standard for gold and elixir resource fungible tokens)
+    *   `ERC1155` (Multi-token standard for semi-fungible army unit assets)
+    *   `Ownable` (Access control mechanism to lock admin configurations)
+*   **Foundry (Forge & Anvil):** Blazing fast testing, compilation, and deployment framework.
+*   **Forge-Std:** Standard testing library for Forge unit assertions and environment cheats.
 
-### Frontend (User Interface)
-*   **React (19.x) & Next.js (15.x):** Component architecture, server-side configurations, and client-side App Router.
-*   **TypeScript:** Type-safe development environment for contract interaction variables.
-*   **Tailwind CSS:** Premium styling framework used to design the retro dashboard panels.
-*   **Ethers.js (v6):** Blockchain wrapper connecting React custom hooks to MetaMask provider networks.
+### 🌐 Frontend & User Interface (TypeScript)
+*   **React (19.2.0) & Next.js (16.0.10 App Router):** Core UI component library and static rendering framework.
+*   **TypeScript:** Strictly-typed superscript of JavaScript for type-safe contract interfaces and components.
+*   **Ethers.js (v6.16.0):** Complete library for interacting with the Ethereum Blockchain and its nodes.
+*   **Tailwind CSS (v4.1.9):** Utility-first CSS framework for custom responsive village styling.
+*   **Radix UI (Primitives):** Unstyled, accessible React components utilized for dashboard popovers, dialogs, switch toggles, tabs, tooltips, dropdowns, and progress bars.
+*   **Vaul:** Mobile-ready unstyled drawer component for sliding panels.
+*   **Recharts (2.15.4):** Composited charts library for treasury growth history visualization.
+*   **Lucide React:** Clean icon asset library representing game resources and statistics.
+*   **React Hook Form & Zod:** Type-safe form validation for deposit amount inputs and training locks.
+*   **Embla Carousel React:** Touch-ready carousel component for switching troop cards.
+*   **Vercel Analytics:** Client-side telemetry tracking for live deployment performance.
+*   **PostCSS & Autoprefixer:** CSS parsing and compilation utilities.
+*   **UI Helpers:** `clsx`, `tailwind-merge`, `class-variance-authority` (CVA), `tailwindcss-animate`, `tw-animate-css` (for smooth village layout entry animations).
+
+### ⚙️ Scripting & Local Automation
+*   **Python (3.x):** Used for local utility scripts (such as image boundary cleanup and git restructuring).
+*   **Bash / Shell:** System command triggers for compiling smart contracts, generating snapshots, and running tests.
 
 ---
+
 
 ## 🌐 Deployed Smart Contract Addresses (Sepolia Testnet)
 
@@ -46,9 +68,10 @@ The project contracts are compiled and deployed on the **Ethereum Sepolia Testne
 | **VaultOfClans** | Core staking vault and troop training | [`0x636Ff98761076f641e724EdAF1B0B452C20Cc783`](https://sepolia.etherscan.io/address/0x636Ff98761076f641e724EdAF1B0B452C20Cc783) |
 | **ClashGold** | In-game $GOLD resource token (ERC-20) | [`0xB5126dfC0158DfA1c6cd6a78CcEc759B00D6f260`](https://sepolia.etherscan.io/address/0xB5126dfC0158DfA1c6cd6a78CcEc759B00D6f260) |
 | **ClashElixir** | In-game $ELIXIR resource token (ERC-20) | [`0x0599927D3a61904199F386265370F01198F722E5`](https://sepolia.etherscan.io/address/0x0599927D3a61904199F386265370F01198F722E5) |
-| **ClashAssets** | Village building NFTs (ERC-721) | [`0xAAe15788ed6bfa51AE61F2987eB3aB637cF22148`](https://sepolia.etherscan.io/address/0xAAe15788ed6bfa51AE61F2987eB3aB637cF22148) |
+| **ClashAssets** | Village building & troop assets (ERC-1155) | [`0xAAe15788ed6bfa51AE61F2987eB3aB637cF22148`](https://sepolia.etherscan.io/address/0xAAe15788ed6bfa51AE61F2987eB3aB637cF22148) |
 
 ---
+
 
 ## ⚔️ Gameplay Mechanics vs. On-Chain Actions
 
@@ -62,6 +85,35 @@ Every in-game village action executes a corresponding state mutation on the Ethe
 | **Train Giant** | `trainGiant()` | Direct deposit transaction of **0.2 ETH** to the Vault. | Adds to active stake. Training $\ge 3$ Giants reduces withdraw fee by 90%. |
 | **Join Clan** | `joinClan(clanId)` | Registers wallet address to a dynamic Clan index. | Combines stake to level up the Clan for shared multiplier perks. |
 | **Claim Loot** | `withdraw(amount)` | Standard yield and principal unstaking request. | Redeems $ETH$ back to user wallet. Subject to timelocks. |
+
+---
+
+## 📂 Repository Folder Structure
+
+The project has a monorepo structure separating the Ethereum Solidity smart contracts and Next.js frontend application:
+
+```text
+VaultOfClans/
+├── .github/workflows/      # CI/CD pipelines
+│   └── test.yml            # Automated Forge tests action
+├── script/                 # Contract deployment and migration scripts
+│   └── DeployAll.s.sol     # Main Deployment Script
+├── src/                    # Core Smart Contracts (EVM logic)
+│   ├── ClashAssets.sol     # ERC-1155 game units (semi-fungible)
+│   ├── ClashElixir.sol     # ERC-20 elixir resource token
+│   ├── ClashGold.sol       # ERC-20 gold resource token
+│   └── VaultOfClans.sol    # Core staking vault & game rules engine
+├── test/                   # Smart Contract testing suite
+│   └── VaultOfClans.t.sol  # Unit and fuzz tests (57 test cases)
+├── frontend/               # Next.js web application (React, TS)
+│   ├── app/                # Next.js App Router (pages: village, clan, army, treasury)
+│   ├── components/         # Game components (isometric grid, troop cards, modal UIs)
+│   ├── hooks/              # Custom React hooks (wallet connect, contract reading/writing)
+│   ├── lib/                # Shared utilities and smart contract configuration constants
+│   └── public/             # Static game image assets (transparent PNGs)
+├── foundry.toml            # Foundry (Forge/Anvil) compiler and profile configuration
+└── README.md               # Main project documentation
+```
 
 ---
 
@@ -228,3 +280,27 @@ The test coverage guarantees:
 *   **Security Bounds:** Verifies reentrancy guards and access control bounds for admin withdrawals.
 *   **Timelock Validation:** Enforces locked balances cannot be withdrawn under any circumstances before `unlockTime`.
 *   **Fuzz Testing:** Runs multiple randomized inputs on deposit limits, fee calculations, and clan switching to avoid calculation overflow.
+
+---
+
+## 🌐 Vercel Deployment Guide
+
+To deploy the Next.js frontend of **Vault of Clans** to Vercel:
+
+1. **Push to GitHub:** Ensure your latest commits are pushed to your remote repository (e.g., `https://github.com/lazyKid64/VaultOfClans`).
+2. **Import Project on Vercel:**
+   * Go to the [Vercel Dashboard](https://vercel.com/) and click **Add New** -> **Project**.
+   * Import your `VaultOfClans` repository.
+3. **Configure Project Settings:**
+   * **Root Directory:** Set this to `frontend`. Since the Next.js app is located in the `frontend` subfolder, specifying the root directory is required for Vercel to find the build configuration.
+   * **Framework Preset:** Next.js (detected automatically).
+   * **Build & Development Settings:** Leave as default.
+4. **Environment Variables:**
+   * If deploying to Sepolia or a custom testnet, you can supply public environment variables as required by Next.js.
+5. **Deploy:** Click **Deploy**. Vercel will build and host your Web3 client.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](file:///c:/MinGW/CoC-dApp/week3-dApp/dApp/LICENSE) file for details.
