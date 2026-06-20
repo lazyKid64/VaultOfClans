@@ -1,0 +1,465 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* =====================================================
+   VAULT OF CLANS — Clash of Clans Themed UI
+   ===================================================== */
+
+:root {
+  /* Ground / Background */
+  --background: #1a3a1a;
+  --foreground: #f5e6c8;
+
+  /* Wooden Panels */
+  --card: #3b1d11;
+  --card-foreground: #f5e6c8;
+
+  /* Popover/modal */
+  --popover: #2a1409;
+  --popover-foreground: #f5e6c8;
+
+  /* Primary — Gold */
+  --primary: #d4a017;
+  --primary-foreground: #1a0d05;
+
+  /* Secondary — Dark Wood */
+  --secondary: #4a2c11;
+  --secondary-foreground: #dcc9a3;
+
+  /* Muted */
+  --muted: #2d1a0a;
+  --muted-foreground: #a08060;
+
+  /* Accent — Emerald / Upgrade Green */
+  --accent: #22c55e;
+  --accent-foreground: #052e16;
+
+  /* Destructive */
+  --destructive: #dc2626;
+  --destructive-foreground: #fef2f2;
+
+  /* Borders */
+  --border: #5c3a1e;
+  --input: #3b1d11;
+  --ring: #d4a017;
+
+  /* Game colors */
+  --gold: #fbbf24;
+  --elixir: #d946ef;
+  --gem: #3b82f6;
+
+  /* Charts */
+  --chart-1: #d4a017;
+  --chart-2: #22c55e;
+  --chart-3: #d946ef;
+  --chart-4: #3b82f6;
+  --chart-5: #dc2626;
+
+  --radius: 0.75rem;
+
+  /* Sidebar */
+  --sidebar: #1a0d05;
+  --sidebar-foreground: #f5e6c8;
+  --sidebar-primary: #d4a017;
+  --sidebar-primary-foreground: #1a0d05;
+  --sidebar-accent: #3b1d11;
+  --sidebar-accent-foreground: #f5e6c8;
+  --sidebar-border: #5c3a1e;
+  --sidebar-ring: #d4a017;
+}
+
+@theme inline {
+  --font-sans: 'Nunito', 'Nunito Fallback', sans-serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
+  --font-display: 'Lilita One', 'Lilita One Fallback', cursive;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-gold: var(--gold);
+  --color-elixir: var(--elixir);
+  --color-gem: var(--gem);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+}
+
+/* =====================================================
+   KEYFRAME ANIMATIONS
+   ===================================================== */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes bubble {
+  0% { transform: translateY(0) scale(1); opacity: 0.7; }
+  50% { transform: translateY(-12px) scale(1.1); opacity: 0.4; }
+  100% { transform: translateY(-24px) scale(0.8); opacity: 0; }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1) rotate(180deg); }
+}
+
+@keyframes swordClash {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(15deg); }
+  75% { transform: rotate(-15deg); }
+}
+
+@keyframes coinDrop {
+  0% { transform: translateY(-8px) rotate(0deg); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(4px) rotate(360deg); opacity: 0; }
+}
+
+@keyframes elixirWave {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 8px rgba(212, 160, 23, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(212, 160, 23, 0.6); }
+}
+
+@keyframes constructionSpark {
+  0% { opacity: 0; transform: translateY(0) scale(0); }
+  30% { opacity: 1; transform: translateY(-10px) scale(1); }
+  100% { opacity: 0; transform: translateY(-25px) scale(0.5); }
+}
+
+@keyframes bannerWave {
+  0%, 100% { transform: rotateY(0deg); }
+  50% { transform: rotateY(8deg); }
+}
+
+/* =====================================================
+   COC UI UTILITY CLASSES
+   ===================================================== */
+
+@layer utilities {
+  /* Wooden panel background */
+  .coc-panel {
+    background: linear-gradient(180deg, #5c3a1e 0%, #3b1d11 100%);
+    border: 4px solid #2b120a;
+    border-radius: 16px;
+    box-shadow:
+      0 6px 0 #1a0d05,
+      inset 0 1px 0 rgba(255, 215, 120, 0.15);
+    position: relative;
+  }
+
+  .coc-panel::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 215, 120, 0.08);
+    pointer-events: none;
+  }
+
+  /* Gold button */
+  .coc-btn-gold {
+    background: linear-gradient(180deg, #f5c842 0%, #c48a1a 100%);
+    border: 3px solid #8b5a0a;
+    border-radius: 12px;
+    color: #2b120a;
+    font-family: var(--font-display);
+    font-weight: 400;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+    box-shadow:
+      0 5px 0 #6b3f08,
+      0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.1s ease;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+  }
+
+  .coc-btn-gold:hover {
+    background: linear-gradient(180deg, #ffe066 0%, #d4a017 100%);
+    box-shadow:
+      0 5px 0 #6b3f08,
+      0 8px 20px rgba(212, 160, 23, 0.4);
+  }
+
+  .coc-btn-gold:active {
+    transform: translateY(3px);
+    box-shadow:
+      0 2px 0 #6b3f08,
+      0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Green button */
+  .coc-btn-green {
+    background: linear-gradient(180deg, #4ade80 0%, #16a34a 100%);
+    border: 3px solid #0a5c2a;
+    border-radius: 12px;
+    color: #052e16;
+    font-family: var(--font-display);
+    font-weight: 400;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+    box-shadow:
+      0 5px 0 #064e1a,
+      0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.1s ease;
+    cursor: pointer;
+  }
+
+  .coc-btn-green:hover {
+    background: linear-gradient(180deg, #6ee7a0 0%, #22c55e 100%);
+  }
+
+  .coc-btn-green:active {
+    transform: translateY(3px);
+    box-shadow:
+      0 2px 0 #064e1a,
+      0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Red button */
+  .coc-btn-red {
+    background: linear-gradient(180deg, #f87171 0%, #b91c1c 100%);
+    border: 3px solid #7f1d1d;
+    border-radius: 12px;
+    color: #fef2f2;
+    font-family: var(--font-display);
+    font-weight: 400;
+    box-shadow:
+      0 5px 0 #450a0a,
+      0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.1s ease;
+    cursor: pointer;
+  }
+
+  .coc-btn-red:active {
+    transform: translateY(3px);
+    box-shadow:
+      0 2px 0 #450a0a,
+      0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  /* CoC Village Background */
+  .grass-bg {
+    background-color: #0f1a0f;
+    position: relative;
+  }
+
+  .grass-bg::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url('/images/coc-village-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.35;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .grass-bg::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(15, 26, 15, 0.5) 0%,
+      rgba(15, 26, 15, 0.3) 40%,
+      rgba(15, 26, 15, 0.5) 100%
+    );
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* Resource bar container */
+  .resource-container {
+    background: linear-gradient(180deg, #4a2c11 0%, #2d1a0a 100%);
+    border: 3px solid #1a0d05;
+    border-radius: 20px;
+    box-shadow:
+      0 3px 0 #0d0702,
+      inset 0 2px 4px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .resource-fill-gold {
+    background: linear-gradient(90deg, #f59e0b, #fbbf24, #f59e0b);
+    border-radius: 16px;
+    height: 100%;
+    transition: width 0.5s ease;
+  }
+
+  .resource-fill-elixir {
+    background: linear-gradient(90deg, #a855f7, #d946ef, #a855f7);
+    border-radius: 16px;
+    height: 100%;
+    transition: width 0.5s ease;
+    position: relative;
+  }
+
+  .resource-fill-elixir::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      rgba(255, 255, 255, 0.15) 10px,
+      transparent 20px
+    );
+    animation: elixirWave 2s linear infinite;
+  }
+
+  /* Floating animation */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Sparkle */
+  .animate-sparkle {
+    animation: sparkle 1.5s ease-in-out infinite;
+  }
+
+  /* Construction sparks */
+  .animate-construction {
+    animation: constructionSpark 1s ease-out infinite;
+  }
+
+  /* Coin drop */
+  .animate-coin-drop {
+    animation: coinDrop 0.8s ease-in-out;
+  }
+
+  /* Pulse glow for important elements */
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  /* Building card on grass */
+  .building-tile {
+    background: linear-gradient(180deg, #5c3a1e 0%, #3b1d11 100%);
+    border: 4px solid #2b120a;
+    border-radius: 16px;
+    box-shadow:
+      0 6px 0 #1a0d05,
+      0 0 0 3px rgba(34, 197, 94, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .building-tile::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 10%;
+    right: 10%;
+    height: 12px;
+    background: radial-gradient(ellipse, rgba(0, 0, 0, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .building-tile:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow:
+      0 12px 0 #1a0d05,
+      0 0 20px rgba(212, 160, 23, 0.3),
+      0 0 0 3px rgba(212, 160, 23, 0.3);
+  }
+
+  /* Display font for headings */
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  /* CoC heading text style */
+  .coc-heading {
+    font-family: var(--font-display);
+    color: #f5e6c8;
+    text-shadow:
+      0 2px 0 #2b120a,
+      0 0 10px rgba(212, 160, 23, 0.3);
+  }
+
+  /* Gold text glow */
+  .gold-glow {
+    color: #fbbf24;
+    text-shadow:
+      0 0 8px rgba(251, 191, 36, 0.5),
+      0 2px 0 #92400e;
+  }
+
+  /* Level badge */
+  .level-badge {
+    background: linear-gradient(180deg, #fbbf24 0%, #d97706 100%);
+    border: 3px solid #92400e;
+    box-shadow: 0 2px 0 #78350f;
+    color: #451a03;
+    font-family: var(--font-display);
+  }
+
+  /* Stone input */
+  .coc-input {
+    background: linear-gradient(180deg, #1a0d05 0%, #2d1a0a 100%);
+    border: 3px solid #5c3a1e;
+    border-radius: 10px;
+    color: #f5e6c8;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .coc-input:focus {
+    border-color: #d4a017;
+    box-shadow:
+      inset 0 2px 4px rgba(0, 0, 0, 0.5),
+      0 0 8px rgba(212, 160, 23, 0.3);
+    outline: none;
+  }
+}

@@ -1,0 +1,28 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer Shield -->
+  <path d="M90 10 L155 32 C155 115, 90 165, 90 165 C90 165, 25 115, 25 32 Z" fill="#B45309" />
+  <path d="M90 18 L147 38 C147 108, 90 152, 90 152 C90 152, 33 108, 33 38 Z" fill="#D97706" />
+  <path d="M90 26 L139 44 C139 101, 90 139, 90 139 C90 139, 41 101, 41 44 Z" fill="#FBBF24" />
+  <path d="M90 26 L90 139 C90 139, 41 101, 41 44 Z" fill="#F59E0B" />
+
+  <!-- Castle / Tower in the center -->
+  <g transform="translate(10, 5)">
+    <!-- Castle Base/Wall -->
+    <rect x="62" y="70" width="36" height="40" rx="2" fill="#4B5563" stroke="#1F2937" stroke-width="4" />
+    <rect x="58" y="62" width="44" height="10" fill="#374151" stroke="#1F2937" stroke-width="4" />
+    
+    <!-- Battlements -->
+    <rect x="60" y="54" width="8" height="10" fill="#374151" stroke="#1F2937" stroke-width="4" />
+    <rect x="76" y="54" width="8" height="10" fill="#374151" stroke="#1F2937" stroke-width="4" />
+    <rect x="92" y="54" width="8" height="10" fill="#374151" stroke="#1F2937" stroke-width="4" />
+    
+    <!-- Red Roof (pointed peak behind battlements) -->
+    <path d="M64 54 L80 32 L96 54 Z" fill="#DC2626" stroke="#991B1B" stroke-width="4" stroke-linejoin="round" />
+    
+    <!-- Arched Doorway -->
+    <path d="M72 110 L72 90 A8 8 0 0 1 88 90 L88 110 Z" fill="#111827" />
+    
+    <!-- Small Window -->
+    <rect x="76" y="74" width="8" height="10" rx="1" fill="#FDE68A" />
+  </g>
+</svg>
